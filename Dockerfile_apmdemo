@@ -1,0 +1,6 @@
+FROM mcr.microsoft.com/dotnet/aspnet:6.0
+ENV ASPNETCORE_URLS=http://+:5000
+ENV ELASTIC_APM_SERVER_URL=http://apm:8200
+WORKDIR /app
+COPY apm-demo/published/ ./
+ENTRYPOINT ["dotnet", "apm-demo.dll"]

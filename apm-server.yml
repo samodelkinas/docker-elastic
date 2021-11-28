@@ -1,0 +1,4 @@
+apm-server:
+  host: "0.0.0.0:8200"
+output.elasticsearch:
+  hosts: ["es01:9200","es02:9200","es03:9200"]
