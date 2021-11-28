@@ -15,11 +15,10 @@ This environment is built to preview new features on ElasticSearch on your local
 - Only ElasticSearch data volumes are persistent. All other containers are completely stateless. If you screw things up, just remove docker-elasticsearch volumes and let them get recreated.
 
 ## Setting up ##
-1. Make sure your PC has at least 8 GB of available RAM
-2. Docker for MacOS or Windows (WSL2 has issue with kernel parameter, use Hyper-V mode) and configure its engine to use at least 8 Gb of RAM.
+1. Make sure your PC has at least 8 GB of available RAM and a decent CPU.
+2. Docker desktop installed and its engine to allowed to use at least 8 Gb of RAM. On Windows with WSL2, make sure to set your docker VM with ```sysctl -w vm.max_map_count=262144```, see https://github.com/docker/for-win/issues/5202.
 3. Open terminal and cd to project
-4. run ```docker-compose up```
-
+4. ```docker-compose up```. You can optionally run parts of the stack, for example ```docker-compose up es01 es02 es03 kibana apm apmdemo```
 
 ## Accessing ##
 - Kibana is available through http://localhost:5601 in your browser
